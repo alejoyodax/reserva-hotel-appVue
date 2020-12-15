@@ -37,17 +37,19 @@ export default {
       console.log(datosJSon);
 
       axios
-        .post("http://127.0.0.1:8000/cliente/auth" , datosJSon)
+          // .post("http://127.0.0.1:8000/cliente/auth" , datosJSon) localmente
+        .post("https://reserva-hotel-fastapi.herokuapp.com/cliente/auth" , datosJSon)
         .then((respuesta) => {
           if (respuesta.data.Autenticado) {
             console.log("AUTENTICADO CORRECTAMENTE");
             alert("AUTENTICADO CORRECTAMENTE");
           }else{
-            console.log("NO AUTENTICADO");
+            console.log("CONTRASEÑA INCORRECTA");
+            alert("CONTRASEÑA INCORRECTA");
           }
+          
         }).catch(error => {
-        console.log(error)
-        this.errored = true
+        alert("El usuario no existe")
     });
   }
 }
