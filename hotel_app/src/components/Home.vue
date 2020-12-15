@@ -22,38 +22,46 @@ export default {
   name: "Home",
   data: function () {
     return {
-      user: null,
-      pass: null
+      user: "",
+      pass: "",
     };
   },
 
   methods: {
     hacerLogin: function () {
-      this.user
-      var datosJSon = { 
-        "username": this.user, 
-        "contrasena": this.pass 
-        };
+      this.user;
+      var datosJSon = {
+        username: this.user,
+        contrasena: this.pass,
+      };
       console.log(datosJSon);
 
-      axios
+      if (this.user != null || this.contrasena != null) {
+        axios
           // .post("http://127.0.0.1:8000/cliente/auth" , datosJSon) localmente
-        .post("https://reserva-hotel-fastapi.herokuapp.com/cliente/auth" , datosJSon)
-        .then((respuesta) => {
-          if (respuesta.data.Autenticado) {
-            console.log("AUTENTICADO CORRECTAMENTE");
-            alert("AUTENTICADO CORRECTAMENTE");
-          }else{
-            console.log("CONTRASEÑA INCORRECTA");
-            alert("CONTRASEÑA INCORRECTA");
-          }
-          
-        }).catch(error => {
-        alert("El usuario no existe")
-    });
-  }
-}
-}
+          .post(
+            "https://reserva-hotel-fastapi.herokuapp.com/cliente/auth",
+            datosJSon
+          )
+          .then((respuesta) => {
+            if (respuesta.data.Autenticado) {
+              console.log("AUTENTICADO CORRECTAMENTE");
+              alert("AUTENTICADO CORRECTAMENTE");
+            } else {
+              console.log("CONTRASEÑA INCORRECTA");
+              alert("CONTRASEÑA INCORRECTA");
+            }
+          })
+          .catch((error) => {
+            alert("El usuario no existe");
+          });
+      }else{
+        alert("VERIFIQUE LOS DATOS")
+      }
+
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
