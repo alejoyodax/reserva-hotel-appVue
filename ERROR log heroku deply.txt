@@ -1,0 +1,130 @@
+-----> Node.js app detected
+       
+-----> Creating runtime environment
+       
+       NPM_CONFIG_LOGLEVEL=error
+       NODE_ENV=production
+       NODE_MODULES_CACHE=true
+       NODE_VERBOSE=false
+       
+-----> Installing binaries
+       engines.node (package.json):  >= 6.0.0
+       engines.npm (package.json):   >= 3.0.0
+       
+       Resolving node version >= 6.0.0...
+       Downloading and installing node 15.4.0...
+       Bootstrapping npm >= 3.0.0 (replacing 7.0.15)...
+       npm >= 3.0.0 installed
+       
+-----> Installing dependencies
+       Installing node modules
+       
+       > fsevents@1.2.13 install /tmp/build_c721e9c0_/node_modules/webpack-dev-server/node_modules/fsevents
+       > node install.js
+       
+       
+       Skipping 'fsevents' build as platform linux is not supported
+       
+       > ejs@2.7.4 postinstall /tmp/build_c721e9c0_/node_modules/ejs
+       > node ./postinstall.js
+       
+       
+       > fsevents@1.2.13 install /tmp/build_c721e9c0_/node_modules/watchpack-chokidar2/node_modules/fsevents
+       > node install.js
+       
+       
+       Skipping 'fsevents' build as platform linux is not supported
+       
+       > uglifyjs-webpack-plugin@0.4.6 postinstall /tmp/build_c721e9c0_/node_modules/webpack/node_modules/uglifyjs-webpack-plugin
+       > node lib/post_install.js
+       
+       
+       > core-js@2.6.12 postinstall /tmp/build_c721e9c0_/node_modules/core-js
+       > node -e "try{require('./postinstall')}catch(e){}"
+       
+       added 1275 packages in 16.568s
+       
+-----> Build
+       Running build
+       
+       > hotel_app@1.0.0 build /tmp/build_c721e9c0_
+       > node build/build.js
+       
+(node:1270) Warning: Accessing non-existent property 'cat' of module exports inside circular dependency
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1270) Warning: Accessing non-existent property 'cd' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'chmod' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'cp' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'dirs' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'pushd' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'popd' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'echo' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'tempdir' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'pwd' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'exec' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'ls' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'find' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'grep' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'head' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'ln' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'mkdir' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'rm' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'mv' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'sed' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'set' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'sort' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'tail' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'test' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'to' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'toEnd' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'touch' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'uniq' of module exports inside circular dependency
+(node:1270) Warning: Accessing non-existent property 'which' of module exports inside circular dependency
+       Hash: c7337b6b1bb7f2869f86
+       Version: webpack 3.12.0
+       Time: 8042ms
+                                                         Asset       Size  Chunks             Chunk Names
+                      static/js/vendor.3bf08807642cffd4f854.js    94.8 kB       0  [emitted]  vendor
+                         static/js/app.f7ef6bd8e27d15d53a33.js  264 bytes       1  [emitted]  app
+                    static/js/manifest.2ae2e69a05c33dfc65f8.js  857 bytes       2  [emitted]  manifest
+           static/css/app.3ff5b684189010c4a43fe30157decc1c.css    1.52 kB       1  [emitted]  app
+       static/css/app.3ff5b684189010c4a43fe30157decc1c.css.map    2.98 kB          [emitted]  
+                  static/js/vendor.3bf08807642cffd4f854.js.map     494 kB       0  [emitted]  vendor
+                     static/js/app.f7ef6bd8e27d15d53a33.js.map  114 bytes       1  [emitted]  app
+                static/js/manifest.2ae2e69a05c33dfc65f8.js.map    4.97 kB       2  [emitted]  manifest
+                                                    index.html  511 bytes          [emitted]  
+       
+       ERROR in ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/components/Home.vue
+       Module not found: Error: Can't resolve 'axios' in '/tmp/build_c721e9c0_/src/components'
+        @ ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/components/Home.vue 20:0-26
+        @ ./src/components/Home.vue
+        @ ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/App.vue
+        @ ./src/App.vue
+        @ ./src/main.js
+       
+         Build failed with errors.
+       
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! hotel_app@1.0.0 build: `node build/build.js`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the hotel_app@1.0.0 build script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /tmp/npmcache.gQQ1I/_logs/2020-12-15T06_15_44_956Z-debug.log
+-----> Build failed
+       
+       We're sorry this build is failing! You can troubleshoot common issues here:
+       https://devcenter.heroku.com/articles/troubleshooting-node-deploys
+       
+       Some possible problems:
+       
+       - Dangerous semver range (>) in engines.node
+         https://devcenter.heroku.com/articles/nodejs-support#specifying-a-node-js-version
+       
+       Love,
+       Heroku
+       
+ !     Push rejected, failed to compile Node.js app.
+ !     Push failed

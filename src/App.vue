@@ -43,7 +43,7 @@ body {
   height: 10vh;
   min-height: 100px;
 
-  background-color: #283747;
+  background-color: #6283a7;
   color: #e5e7e9;
 
   display: flex;
@@ -63,7 +63,7 @@ body {
   width: 100%;
   height: 10vh;
   min-height: 100px;
-  background-color: #283747;
+  background-color: #6283a7;
   color: #e5e7e9;
 }
 .footer h2 {

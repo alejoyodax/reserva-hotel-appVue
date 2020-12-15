@@ -11,7 +11,9 @@
 
     </form>
 
-    <input v-on:click="hacerLogin" type="button" id="boton-aceptar" value="Aceptar">
+    <input v-on:click="hacerLogin" type="button" id="boton-aceptar" value="Aceptar"><br>
+    <br><br><br>
+    <a href="" id="mensaje-no-usuario" v-on:click="irRegistrarse" ref="">¿Aún no tiene un usuario?</a>
 
   </div>
 </template>
@@ -60,6 +62,11 @@ export default {
       }
 
     },
+
+    irRegistrarse: function(){
+      alert("DEBE CREAR UN USUARIO")
+    }
+
   },
 };
 </script>
