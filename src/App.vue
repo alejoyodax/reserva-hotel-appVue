@@ -31,7 +31,7 @@ export default {
 
   methods: {
     init: function () {
-      this.$router.push(name="login");
+      this.$router.push((name = "login"));
     },
   },
 };
