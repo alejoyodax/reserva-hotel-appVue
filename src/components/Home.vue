@@ -1,5 +1,5 @@
 <template>
-  <div v-if="no_ocultar_login" id="caja-formulario">
+  <div id="caja-formulario">
     <h1>Iniciar sesión</h1>
     
     <form id="formulario">
@@ -27,7 +27,7 @@ export default {
       user: "",
       pass: "",
       Autenticado: false,
-      no_ocultar_login: true,
+      no_ocultar_login: false,
       message: " "
 
     };  
@@ -55,7 +55,7 @@ export default {
               alert("AUTENTICADO CORRECTAMENTE");
               this.Autenticado = true;
               console.log(this.Autenticado)
-
+             
               
             } else {
               console.log("CONTRASEÑA INCORRECTA");
