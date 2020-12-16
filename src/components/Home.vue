@@ -26,7 +26,7 @@ export default {
     return {
       user: "",
       pass: "",
-      Autenticado: false,
+      Autenticado: null,
       no_ocultar_login: false,
       message: " "
 

@@ -29,8 +29,10 @@ export default {
     };
   },
 
-  created: function () {
-    this.$router.push((name = "login"));
+  methods: {
+    init: function () {
+      this.$router.push(name="login");
+    },
   },
 };
 </script>
