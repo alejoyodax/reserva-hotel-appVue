@@ -21,19 +21,24 @@ export default {
     Home
   }
 };
+
+
 </script>
 
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family:  roboto ;
   text-align: center;
   color: #2c3e50;
 }
 
 body {
   margin: 0 0 0 0;
+  background-color: rgb(56, 112, 97);
 }
 
 .header {
@@ -43,7 +48,7 @@ body {
   height: 10vh;
   min-height: 100px;
 
-  background-color: #6283a7;
+  background-color: rgb(35, 38, 44);
   color: #e5e7e9;
 
   display: flex;
@@ -55,6 +60,9 @@ body {
 .header h1 {
   width: 100%;
   text-align: center;
+  font: bold;
+  font-family: 'Roboto', sans-serif;
+  color: white;
 }
 
 .footer {
@@ -63,7 +71,7 @@ body {
   width: 100%;
   height: 10vh;
   min-height: 100px;
-  background-color: #6283a7;
+  background-color:rgb(35, 38, 44);
   color: #e5e7e9;
 }
 .footer h2 {

@@ -1,5 +1,5 @@
 <template>
-  <div id="caja-formulario">
+  <div v-if="no_ocultar_login" id="caja-formulario">
     <h1>Iniciar sesión</h1>
     
     <form id="formulario">
@@ -12,8 +12,8 @@
     </form>
 
     <input v-on:click="hacerLogin" type="button" id="boton-aceptar" value="Aceptar"><br>
-    <br><br><br>
-    <a href="" id="mensaje-no-usuario" v-on:click="irRegistrarse" ref="">¿Aún no tiene un usuario?</a>
+    <br><br>
+    <a href="" id="mensaje-no-usuario" v-on:click="irRegistrarse" @click="$emit('speak', this.message)" >¿Aún no tiene un usuario?</a>
 
   </div>
 </template>
@@ -26,7 +26,11 @@ export default {
     return {
       user: "",
       pass: "",
-    };
+      Autenticado: false,
+      no_ocultar_login: true,
+      message: " "
+
+    };  
   },
 
   methods: {
@@ -49,6 +53,10 @@ export default {
             if (respuesta.data.Autenticado) {
               console.log("AUTENTICADO CORRECTAMENTE");
               alert("AUTENTICADO CORRECTAMENTE");
+              this.Autenticado = true;
+              console.log(this.Autenticado)
+
+              
             } else {
               console.log("CONTRASEÑA INCORRECTA");
               alert("CONTRASEÑA INCORRECTA");
@@ -73,25 +81,33 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 #caja-formulario {
   margin: 80px 280px 80px;
-  background-color: white;
+  background-color: rgb(29, 31, 38);
   height: 300px;
 
-  border: solid;
-  border-color: darkslategray;
-  border-radius: 5px;
+  border: none;
+  border-radius: 15px;
+
+  color: rgb(123, 180, 140);
 }
 
 h1 {
-  padding-top: 0px;
+  padding-top: 30px;
+  font-size: 2.5em;
 }
 
 label {
   display: inline-block;
-  width: 100px;
-  text-align: left;
+  width: 120px;
+  text-align: right;
   margin-right: 10px;
+  color: coral;
+  
 }
 
 #formulario {
@@ -106,9 +122,12 @@ label {
 #boton-aceptar {
   width: 100px;
   height: 33px;
-  background-color: white;
-  font: bold;
+  background-color: rgb(78, 67, 63);
+  font-family:roboto;
   margin: 0px;
+  border-style: none;
+  font-size: 1.2em;
+  color: white;
 }
 
 #boton-aceptar:hover {
@@ -121,4 +140,32 @@ label {
   background-color: rgb(48, 48, 48);
   font: bold;
 }
+
+.iform {
+  background-color: transparent;
+  color:  white;
+  border-style: solid;
+  font-family: 'Roboto', sans-serif;
+  font: bold;
+  border-radius: 10px;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: bold;
+}
+
+.iform:focus{
+  border-color: yellow;
+  
+}
+
+#mensaje-no-usuario {
+  color: rgb(148, 148, 148);
+  text-decoration: none;
+}
+
+#mensaje-no-usuario:hover {
+  color: white;
+}
+
+
 </style>

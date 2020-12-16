@@ -6,11 +6,10 @@
     "private": true,
     "scripts": {
         "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-        "start": "node server.js",
+        "start": "npm run dev",
         "build": "node build/build.js"
     },
     "dependencies": {
-        "axios": "^0.21.0",
         "vue": "^2.5.2"
     },
     "devDependencies": {
