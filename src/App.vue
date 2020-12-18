@@ -15,12 +15,15 @@
 <script>
 import Home from "./components/Home.vue";
 import Panel_cliente_inicio from "./components/Panel_cliente_inicio";
+import Registro from "./components/Registro";
+
 import axios from "axios";
 export default {
   name: "App",
   components: {
     Home,
     Panel_cliente_inicio,
+    Registro,
   },
 
   data: function () {
@@ -29,15 +32,13 @@ export default {
     };
   },
 
-  methods: {
-    init: function () {
-      this.$router.push((name = "login"));
-    },
-  },
+  methods: {},
 };
 </script>
 
-<style>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 

@@ -1,13 +1,14 @@
 import vueRouter from 'vue-router'
 import Home from './components/Home'
 import Panel_cliente_inicio from './components/Panel_cliente_inicio'
+import Registro from './components/Registro'
 import App from './App'
 
 const router = new vueRouter({
     mode: 'history',
     routes: [{
             path: '/',
-            name: "login",
+            name: "home",
             component: Home
         },
         {
@@ -15,6 +16,11 @@ const router = new vueRouter({
             name: "dashboard",
             component: Panel_cliente_inicio
         },
+        {
+            path: '/registro',
+            name: "registro",
+            component: Registro
+        }
     ]
 })
 

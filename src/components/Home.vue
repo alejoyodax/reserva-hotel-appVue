@@ -1,4 +1,5 @@
 <template>
+
   <div id="caja-formulario">
     <h1>Iniciar sesión</h1>
     
@@ -16,6 +17,7 @@
     <a href="" id="mensaje-no-usuario" v-on:click="irRegistrarse" @click="$emit('speak', this.message)" >¿Aún no tiene un usuario?</a>
 
   </div>
+
 </template>
 
 <script>
@@ -28,9 +30,9 @@ export default {
       pass: "",
       Autenticado: null,
       no_ocultar_login: false,
-      message: " "
-
-    };  
+      message: " ",
+      usuario_ingresado: localStorage.getItem("isAuth") || "",
+    };
   },
 
   methods: {
@@ -40,7 +42,7 @@ export default {
         username: this.user,
         contrasena: this.pass,
       };
-      console.log(datosJSon);
+      console.log(datosJSon); //para ver en consola los datos ingresados
 
       if (this.user != null || this.contrasena != null) {
         axios
@@ -54,9 +56,15 @@ export default {
               console.log("AUTENTICADO CORRECTAMENTE");
               alert("AUTENTICADO CORRECTAMENTE");
               this.Autenticado = true;
-              console.log(this.Autenticado)
-             
-              
+              console.log(this.Autenticado);
+
+              let usuario_ingresado = localStorage.setItem(
+                "usuario_ingresado",
+                this.user
+              );
+
+              this.$router.push((name = "user/home"));   //si el usuario se autenticó correctamente, lo manda a "user/home"
+            
             } else {
               console.log("CONTRASEÑA INCORRECTA");
               alert("CONTRASEÑA INCORRECTA");
@@ -65,25 +73,27 @@ export default {
           .catch((error) => {
             alert("El usuario no existe");
           });
-      }else{
-        alert("VERIFIQUE LOS DATOS")
+      } else {
+        alert("VERIFIQUE LOS DATOS");
       }
-
     },
 
-    irRegistrarse: function(){
-      alert("DEBE CREAR UN USUARIO")
-    }
-
-  },
+    irRegistrarse: function () {
+      this.$router.push((name = "/registro")); //
+    },
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style >
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body{
+    margin: 0 0 0 0;
+    background-color: rgb(29, 31, 38);
+  }
 
 #caja-formulario {
   margin: 80px 280px 80px;
@@ -96,6 +106,7 @@ export default {
   color: rgb(123, 180, 140);
 }
 
+
 h1 {
   padding-top: 30px;
   font-size: 2.5em;
@@ -107,7 +118,6 @@ label {
   text-align: right;
   margin-right: 10px;
   color: coral;
-  
 }
 
 #formulario {
@@ -123,7 +133,7 @@ label {
   width: 100px;
   height: 33px;
   background-color: rgb(78, 67, 63);
-  font-family:roboto;
+  font-family: roboto;
   margin: 0px;
   border-style: none;
   font-size: 1.2em;
@@ -143,19 +153,18 @@ label {
 
 .iform {
   background-color: transparent;
-  color:  white;
+  color: white;
   border-style: solid;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font: bold;
   border-radius: 10px;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: bold;
 }
 
-.iform:focus{
+.iform:focus {
   border-color: yellow;
-  
 }
 
 #mensaje-no-usuario {
@@ -166,6 +175,4 @@ label {
 #mensaje-no-usuario:hover {
   color: white;
 }
-
-
 </style>
